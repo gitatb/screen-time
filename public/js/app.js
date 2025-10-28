@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const text = link.querySelector('p').textContent.toLowerCase();
-            const pageMap = {'dashboard': 'dashboard.html', 'history': 'history.html', 'activity log': 'history.html', 'reports': 'history.html', 'settings': 'settings.html'};
+            const pageMap = {'dashboard': 'index.html', 'history': 'history.html', 'activity log': 'history.html', 'reports': 'history.html', 'settings': 'settings.html'};
             if (pageMap[text]) window.location.href = pageMap[text];
         });
     });
