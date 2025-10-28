@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ScreenTime Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+ tailwind.config = {
+ darkMode: "class",
+ theme: {
+ extend: {
+ colors: {
+"primary": "#13a4ec",
+"background-light": "#f6f7f8",
+"background-dark": "#101c22",
+},
+ fontFamily: {
+"display": ["Inter", "sans-serif"]
+},
+ borderRadius: {
+"DEFAULT": "0.25rem",
+"lg": "0.5rem",
+"xl": "0.75rem",
+"full": "9999px"
+},
+},
+},
+}
+</script>
+<style>
+.material-symbols-outlined {
+ font-variation-settings:
+ 'FILL' 0,
+ 'wght' 400,
+ 'GRAD' 0,
+ 'opsz' 24
+}
+</style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full flex-1">
+<!-- SideNavBar -->
+<aside class="flex w-64 flex-col bg-[#111c22] p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract blue and green circular gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMlCo9nHhyHLx7oygDY7l9AlpOdNjxQoinZ0mfPhXB1Rfpme0_DGOMHb1SZ-xq4f0GzD4krzrvF41Nz-fRBVr-zYZX6wPIcW5M2uek9DA3JJXtPlDgg-mmcJF1-S7ev75GMhvUSyXDSp1um8C_IXm4WUz0MPyz2hnXeG8B9pvYBu7nuUPWIUDoL5nfFVfJ8iNM9B9Mz8C1FrntONMcxHFbsD36_jugaBzN-VhbZUX2eNCJOWC1qviftqXDjYyb273uZvHf2CUBNzPs");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">ScreenTime</h1>
+<p class="text-[#92b7c9] text-sm font-normal leading-normal">Welcome Back</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg bg-primary/30 px-3 py-2" href="#">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+<p class="text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/80">history</span>
+<p class="text-white text-sm font-medium leading-normal">History</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/80">bar_chart</span>
+<p class="text-white text-sm font-medium leading-normal">Reports</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/80">settings</span>
+<p class="text-white text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-white/80">help</span>
+<p class="text-white text-sm font-medium leading-normal">Help</p>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-4xl">
+<!-- Page Heading -->
+<header class="flex flex-wrap items-center justify-between gap-4">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Dashboard</h1>
+<div class="flex items-center gap-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#325567]/50 text-white transition-colors hover:bg-[#325567]">
+<span class="material-symbols-outlined">pause</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#325567]/50 text-white transition-colors hover:bg-[#325567]">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</header>
+<!-- Stats -->
+<div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div class="flex flex-col gap-2 rounded-xl border border-[#325567] bg-[#111c22]/50 p-6">
+<p class="text-[#92b7c9] text-base font-medium leading-normal">Current Session</p>
+<p id="current-session-time" class="text-white text-5xl font-bold leading-tight tracking-tighter">00:00</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-[#325567] bg-[#111c22]/50 p-6">
+<p class="text-[#92b7c9] text-base font-medium leading-normal">Total Today</p>
+<p id="total-today-time" class="text-white text-5xl font-bold leading-tight tracking-tighter">0m</p>
+</div>
+</div>
+<!-- Upcoming Breaks Section -->
+<section id="upcoming-breaks-section" class="mt-8">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Upcoming Breaks</h2>
+<div class="flex flex-col gap-6 rounded-xl border border-[#325567] bg-[#111c22]/50 p-6">
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+<script src="public/js/app.js"></script>
+</body></html>

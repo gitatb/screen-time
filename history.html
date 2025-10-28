@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Usage Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+ tailwind.config = {
+ darkMode: "class",
+ theme: {
+ extend: {
+ colors: {
+"primary": "#13a4ec",
+"background-light": "#f6f7f8",
+"background-dark": "#101c22",
+},
+ fontFamily: {
+"display": ["Inter", "sans-serif"]
+},
+ borderRadius: {
+"DEFAULT": "0.25rem",
+"lg": "0.5rem",
+"xl": "0.75rem",
+"full": "9999px"
+},
+},
+},
+}
+</script>
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex flex-col w-64 bg-[#111c22] p-4 text-white shrink-0">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">hourglass_top</span>
+<h2 class="text-xl font-bold">TimeWell</h2>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of Alex Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChBUG2YgsC9vAQgebXCtnNHaqglVw_gB_RgIFYxOWFXbS5xXpBl3ysTOdrupxuTXh2BnBvi9Mu0AMgWnQBNCBMfqa34h-DEhQYzBBXi3CR2eytCj7uxWGCCpu79npFbKYXhPHdx8dJgKtZ28gZ-oIY9IdqypccgszLy5uWw2e9wLCQS1XzvLYUwY61nx9etgTl3NsDrh5CF93KsD351rTUrwCmyliubi19nCCEU5NY9Avp_j-V1b9WBkex3iyWRLy8heIKMIQ9W5OE");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Alex Chen</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">alex.chen@email.com</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#233c48]" href="#">
+<span class="material-symbols-outlined text-white text-2xl">
+ dashboard
+</span>
+<p class="text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#233c48]/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-2xl">
+ list_alt
+</span>
+<p class="text-white text-sm font-medium leading-normal">Activity Log</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#233c48]/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-2xl">
+ settings
+</span>
+<p class="text-white text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#233c48]/50 transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-2xl">
+ logout
+</span>
+<p class="text-white text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-7xl mx-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-4 items-center mb-6">
+<div class="flex flex-col gap-2">
+<p class="text-black dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Usage Analytics</p>
+<p class="text-gray-500 dark:text-[#92b7c9] text-base font-normal leading-normal">A detailed log of your screen time usage.</p>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#111c22] border border-gray-200 dark:border-[#325567]">
+<p class="text-gray-600 dark:text-white text-base font-medium leading-normal">Average Daily Use</p>
+<p class="text-black dark:text-white tracking-light text-3xl font-bold leading-tight">6h 12m</p>
+<p class="text-green-500 dark:text-[#0bda57] text-base font-medium leading-normal">+5%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#111c22] border border-gray-200 dark:border-[#325567]">
+<p class="text-gray-600 dark:text-white text-base font-medium leading-normal">Total Time This Week</p>
+<p class="text-black dark:text-white tracking-light text-3xl font-bold leading-tight">43h 24m</p>
+<p class="text-red-500 dark:text-[#fa5f38] text-base font-medium leading-normal">-10%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#111c22] border border-gray-200 dark:border-[#325567]">
+<p class="text-gray-600 dark:text-white text-base font-medium leading-normal">Longest Session</p>
+<p class="text-black dark:text-white tracking-light text-3xl font-bold leading-tight">3h 45m</p>
+<p class="text-green-500 dark:text-[#0bda57] text-base font-medium leading-normal">+15%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#111c22] border border-gray-200 dark:border-[#325567]">
+<p class="text-gray-600 dark:text-white text-base font-medium leading-normal">Breaks This Week</p>
+<p class="text-black dark:text-white tracking-light text-3xl font-bold leading-tight">21</p>
+<p class="text-green-500 dark:text-[#0bda57] text-base font-medium leading-normal">Goal Met</p>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Main Chart & Filters -->
+<div class="flex-1 flex flex-col gap-6">
+<div class="bg-white dark:bg-[#111c22] p-6 rounded-lg border border-gray-200 dark:border-[#325567]">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+<h3 class="text-lg font-semibold text-black dark:text-white">Screen Time</h3>
+<!-- SegmentedButtons -->
+<div class="flex h-10 w-full sm:w-auto items-center justify-center rounded-lg bg-gray-100 dark:bg-[#233c48] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111c22] has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92b7c9] text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Daily</span>
+<input class="invisible w-0" name="time-period" type="radio" value="Daily"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111c22] has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92b7c9] text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Weekly</span>
+<input checked="" class="invisible w-0" name="time-period" type="radio" value="Weekly"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111c22] has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92b7c9] text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Monthly</span>
+<input class="invisible w-0" name="time-period" type="radio" value="Monthly"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-3 has-[:checked]:bg-white dark:has-[:checked]:bg-[#111c22] has-[:checked]:shadow-sm has-[:checked]:text-black dark:has-[:checked]:text-white text-gray-500 dark:text-[#92b7c9] text-sm font-medium leading-normal transition-colors">
+<span class="truncate">All Time</span>
+<input class="invisible w-0" name="time-period" type="radio" value="All Time"/>
+</label>
+</div>
+</div>
+<!-- Interactive Chart Placeholder -->
+<div class="h-80 w-full rounded-lg flex items-center justify-center bg-gray-50 dark:bg-background-dark/50">
+<img alt="A line chart showing screen time usage over a week, with peaks on Wednesday and Saturday." class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApyd9uA2dq7cMo3ijDhLPXB2-FcgClIeIfOP2NyuDrZapqpzSQTV4KqxWkItGASoBbKuTQOZu2C9MXsrFZuXLgq5fTj6NIAZq18Be40ZbfVtdtLrkZTuXfVqLrKp5LEbRq2OpPjkB6l48Jm0Z47qtLfTUCXhkcdqpMC9npfKmrWRw3UNe0nHBTQ2nw9fsKmCqjy6ym0hhEV2iwyZWzCjBEDIanybYk54tqumYzvGpt8QgogazIvZidSJm8YscpPivjfwxaCE498cqL"/>
+</div>
+</div>
+<!-- Data Table -->
+<div class="bg-white dark:bg-[#111c22] p-6 rounded-lg border border-gray-200 dark:border-[#325567]">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-4">
+<h3 class="text-lg font-semibold text-black dark:text-white">Detailed Session History</h3>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-[#233c48] dark:hover:bg-[#325567] text-sm font-medium text-black dark:text-white transition-colors">
+<span class="material-symbols-outlined text-base">download</span>
+ Export as CSV
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gray-50 dark:bg-[#233c48]/50">
+<tr>
+<th class="px-6 py-3 rounded-l-lg" scope="col">Date</th>
+<th class="px-6 py-3" scope="col">Start Time</th>
+<th class="px-6 py-3" scope="col">End Time</th>
+<th class="px-6 py-3 rounded-r-lg" scope="col">Duration</th>
+</tr>
+</thead>
+<tbody id="history-table-body" class="text-black dark:text-white">
+<tr class="border-b border-gray-200 dark:border-[#325567]">
+<td class="px-6 py-4">Oct 29, 2023</td>
+<td class="px-6 py-4">09:05 AM</td>
+<td class="px-6 py-4">11:30 AM</td>
+<td class="px-6 py-4 font-medium">2h 25m</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-[#325567]">
+<td class="px-6 py-4">Oct 29, 2023</td>
+<td class="px-6 py-4">01:15 PM</td>
+<td class="px-6 py-4">02:00 PM</td>
+<td class="px-6 py-4 font-medium">45m</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-[#325567]">
+<td class="px-6 py-4">Oct 28, 2023</td>
+<td class="px-6 py-4">10:00 AM</td>
+<td class="px-6 py-4">01:45 PM</td>
+<td class="px-6 py-4 font-medium">3h 45m</td>
+</tr>
+<tr>
+<td class="px-6 py-4">Oct 28, 2023</td>
+<td class="px-6 py-4">03:30 PM</td>
+<td class="px-6 py-4">05:10 PM</td>
+<td class="px-6 py-4 font-medium">1h 40m</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- CalendarPicker -->
+<div class="w-full lg:w-80 shrink-0">
+<div class="bg-white dark:bg-[#111c22] p-4 rounded-lg border border-gray-200 dark:border-[#325567]">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center p-1 justify-between">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">
+<span class="material-symbols-outlined text-black dark:text-white text-lg">chevron_left</span>
+</button>
+<p class="text-black dark:text-white text-base font-bold leading-tight flex-1 text-center">October 2023</p>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">
+<span class="material-symbols-outlined text-black dark:text-white text-lg">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7">
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">W</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">F</p>
+<p class="text-gray-500 dark:text-white text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
+<button class="h-12 w-full text-black dark:text-white col-start-1 text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">1</div></button>
+<button class="h-12 w-full text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">2</div></button>
+<button class="h-12 w-full text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">3</div></button>
+<button class="h-12 w-full text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">4</div></button>
+<button class="h-12 w-full text-black dark:text-white rounded-l-full bg-primary/20 dark:bg-[#233c48] text-sm font-medium leading-normal">
+<div class="flex size-full items-center justify-center rounded-full bg-primary text-white">5</div>
+</button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">6</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">7</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">8</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">9</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">10</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">11</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">12</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">13</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">14</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">15</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">16</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">17</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">18</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">19</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">20</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">21</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">22</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">23</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">24</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">25</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">26</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">27</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">28</div></button>
+<button class="h-12 w-full bg-primary/20 dark:bg-[#233c48] text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full">29</div></button>
+<button class="h-12 w-full text-black dark:text-white rounded-r-full bg-primary/20 dark:bg-[#233c48] text-sm font-medium leading-normal">
+<div class="flex size-full items-center justify-center rounded-full bg-primary text-white">30</div>
+</button>
+<button class="h-12 w-full text-black dark:text-white text-sm font-medium leading-normal"><div class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-[#233c48] transition-colors">31</div></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="public/js/app.js"></script>
+</body></html>
